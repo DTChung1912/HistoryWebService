@@ -19,6 +19,7 @@ application {
 
 repositories {
     mavenCentral()
+    maven { url = uri("https://maven.pkg.jetbrains.space/public/p/ktor/eap") }
 }
 
 dependencies {
@@ -27,7 +28,17 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-html-jvm:0.7.3")
     implementation("io.ktor:ktor-server-html-builder-jvm:$ktor_version")
     implementation("io.ktor:ktor-server-netty-jvm:$ktor_version")
+    implementation("io.ktor:ktor-server-tomcat-jvm:$ktor_version")
     implementation("ch.qos.logback:logback-classic:$logback_version")
     testImplementation("io.ktor:ktor-server-tests-jvm:$ktor_version")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version")
+    testImplementation("io.ktor:ktor-server-test-host:$ktor_version")
+
+    implementation("io.ktor:ktor-serialization-gson-jvm:$ktor_version")
+    implementation ("org.ktorm:ktorm-core:3.4.0")
+    implementation ("mysql:mysql-connector-java:8.0.29") //mysql connector
+    implementation ("org.ktorm:ktorm-support-mysql:3.4.0")
+    implementation("io.ktor:ktor-server-content-negotiation-jvm:$ktor_version")
+    implementation("io.ktor:ktor-serialization-kotlinx-json-jvm:$ktor_version")
+    implementation("io.ktor:ktor-server-freemarker:$ktor_version")
 }
